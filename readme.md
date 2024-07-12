@@ -1,13 +1,14 @@
 # 💻Projeto: Prosa Bar
 ><p>Este sistema permite ter controle de estoque, cadastrar comanda, realizar e fechar pedidos</p>
 
-### 🚧O projeto ainda encontra-se em contrução
+### 🚧O projeto ainda encontra-se em construção
 
 ✔️ Finalizado
+<br>
 ❌ Pendente
 
 ><h2>Check list de funções do sistema web:</h2>
-><p>Páginas cliente: HomePage, Cardápio, Equipe, Contato</p>
+><p>✔️ Páginas cliente: HomePage, Cardápio, Equipe, Contato</p>
 ><p>✔️ Login funcionário</p>
 ><p>✔️ Cadastro e modificação de estoque</p>
 ><p>✔️ Cadastro de comandas</p>
@@ -42,9 +43,7 @@
 
 4. Na pasta db no arquivo index.js substitua "root" pelo usuário do Workbench e "thayanne" pela sua senha
 
-5. No MySql Workbench crie o banco de dados e tabelas do arquico que está na pasta models (db.sql)
-
-5. Crie um banco de dados chamado "magichands"
+5. No MySql Workbench crie o banco de dados e tabelas do arquivo db.sql da pasta models
 
 6. Execute no navegador 
   localhost:8000
