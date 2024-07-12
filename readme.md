@@ -60,6 +60,11 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ><code><img height="15" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png" alt="Mysql"> MySQL</code>
 
 ### 👀Veja a interface do projeto responsiva:
+
+
+https://github.com/user-attachments/assets/3df4e38b-5256-4ec7-87e8-041785bdb9fd
+
+
 <video width="1100" src="/public/img-readme/video.mp4"></video>
 <br>
 <img width="1100" src="/public/img-readme/1.png"> </br>
