@@ -41,7 +41,7 @@
 3. Execute a aplicação em modo de desenvolvimento
   $ npm start
 
-4. Na pasta db no arquivo index.js substitua "root" pelo usuário do Workbench e "thayanne" pela sua senha
+4. No arquivo index.js substitua "root" pelo usuário do Workbench e "thayanne" pela sua senha
 
 5. No MySql Workbench crie o banco de dados e tabelas do arquivo db.sql da pasta models
 
