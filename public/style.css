@@ -1,0 +1,522 @@
+/*CONFIGURAÇÕES GERAIS*/
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1&display=swap');
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;  
+  font-family: "Gothic A1", sans-serif;
+}
+body {
+    overflow-y: scroll; 
+    overflow-x: hidden;
+    background-image: url(/img/main.png);
+    background-size: 900% 100%;
+    animation: ground 400s;
+  }
+.whatsapp{
+  z-index: 1;
+  height: 5rem;
+  position: fixed;
+  bottom: 3rem;
+  right: 1rem;
+}
+.sandbar,
+.menu{
+  display: none;
+}
+.container-fluid{
+  width: 100%;
+  padding: 0;
+}
+main{
+  text-align: center;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3rem;
+}
+
+
+/*BARRA DE NAVEGAÇÃO*/
+.navbar-brand{
+  height: 6rem;
+  animation: 3s rotate infinite;
+}
+nav{
+  padding: 0 1rem;
+  width: 100%;
+  background-color: rgba(253, 253, 253, 0.5);
+}
+.nav-items{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 2rem;
+  width: 80%;
+}
+#none{
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+}
+a{
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+  font-size: 0.7rem;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #111;
+  box-shadow: 1.5px 1.5px 1px #fff;
+  transition : box-shadow ease-out 0.6s;  
+}
+a:hover{
+  box-shadow:-1.5px -1.5px 1px #fff;
+  background-color: #dad6bf;
+  transition : box-shadow ease-out 0.6s;        
+}
+
+
+/*FOOTER*/
+footer{
+  position: fixed;
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  color: #111;
+  font-weight: bold;
+  z-index: 2;
+  bottom: 0rem;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(253, 253, 253, 0.5);
+}
+
+
+/*PAGINAS ESPECÍFICAS*/
+
+
+/*HOME*/
+main img{
+  height: 80%;
+  border-radius: 2rem;
+}
+
+
+/*CARDAPIO*/
+.container-cardapio{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 2rem;
+}
+.container-cardapio h4{
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+.container-cardapio .card{
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 1rem ;
+  margin: 0 auto 2rem auto;
+  align-items: center;
+  border: 4px solid #111;
+  box-shadow: 1.5px 1.5px 1px #fff;
+  width: 18rem;
+}
+.card .price{
+  font-size: 0.75rem;
+  display: flex;
+  font-weight: bold;
+  border-bottom: 2px solid #111;
+  justify-content: end;
+  width: 4rem;
+  margin-top: 0.3rem;
+}
+.card h5{
+  border-bottom: 2px solid #111;
+  font-weight: bold;
+  font-size: 0.8rem;
+  width: 12rem;
+  margin-top: 0.3rem;
+}
+.card h6{
+  font-size: 0.7rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+.card p{
+  font-size: 0.8rem;
+  margin-top:-0.5rem;
+  margin-bottom: 0;
+}
+
+
+/*EQUIPE*/
+h2{
+  margin: 1rem 0;
+  color: #111;  
+  text-shadow: 2px 2px #FFF;
+}
+#equipe .card-group{
+  margin: 4rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100%;
+}
+#equipe .card{
+  border: none;
+  background-color: transparent;
+  padding: 0 2rem;
+  margin: 0;
+}
+.card-img-top{
+  height: 15rem;
+  animation: 3s rotate infinite;
+}
+
+
+/*CONTATO*/
+#contato{
+  text-align: center;
+  background-color: rgba(253, 253, 253, 0.5);
+  width: 24rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  padding: 0.5rem 0;
+}
+.form-group{
+  width: 20rem;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+.btn{
+  border: 2px solid #111;
+  box-shadow: 1.5px 1.5px 1px #fff;
+}
+.btn:hover{
+  background-color: #dad6bf;
+  border: 2px solid #111;
+  box-shadow:-1.5px -1.5px 1px #fff;
+  transition : box-shadow ease-out 0.6s; 
+}
+
+
+/*LOGIN*/
+#login{
+  text-align: center;
+  background-color: rgba(253, 253, 253, 0.5);
+  width: 24rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  padding: 0.5rem 0;
+}
+.alert {
+  margin: 0 2rem 1rem 2rem;
+  background-color: #1c6223;
+  color: #fff;
+  font-weight: bolder;
+}
+
+
+/*STAFF*/
+#staff{
+  height: auto;
+  padding: 2rem 0;
+  justify-content: start;
+  margin-bottom: 2rem;
+}
+#staff .unit-comanda{
+  margin: 0.2rem;
+  width: 10rem;
+}
+#staff p,
+#staff label{
+  font-weight: bolder;
+}
+#staff h5{
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  border: 2px solid #111;
+  box-shadow: 1.5px 1.5px 1px #fff;
+  font-weight: bold;
+}
+.erro{
+  background-color: #621c1c;
+  border-radius: 1rem;
+  margin: 1rem 2rem;
+  padding: 1rem;
+  color: #fff;
+  font-weight: bolder;
+}
+.alert-comanda{
+  background-color: #1c6223;
+  border-radius: 1rem;
+  padding: 1rem;
+  color: #fff;
+  font-weight: bolder;
+}
+.comanda{
+  width: 70%;
+  background-color: #dad6bf;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  margin: 0 auto;
+}
+.editestoque{
+  margin: 0 auto;
+  padding: 2rem;
+  width: 70%;
+  background-color: #dad6bf;
+  border-radius: 1rem;  
+  height: auto;
+}
+.aviso{
+  width: 70%;
+  background-color: transparent;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  margin: 0 auto;
+}
+.center{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#staff .card{
+  padding: 1rem;
+  background-color: #dad6bf;
+  border: 2px solid #111;
+  box-shadow: 1.5px 1.5px 1px #fff;
+  border-radius: 1rem;
+  width: 15rem;
+}
+.qtde{ 
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pedido{
+  width: 4rem;
+  align-items: center;
+}
+i{
+  font-size: 2rem;
+  color: #111;
+  transition: 1s;
+}
+i:hover{
+  color: #918e7e;
+}
+.aligh-center{
+  justify-content: center;
+  gap: 2rem;
+}
+.item-list{
+  background-color: #dad6bf;
+  border: 2px solid #111;
+  box-shadow: 1.5px 1.5px 1px #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+li{
+  list-style: none;
+} 
+.delete-item{
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 0 0.5rem;
+  margin: 0.5rem;
+  font-weight: bolder;
+}
+.delete-item:hover{
+  background-color: #eb1a1a;
+}
+.conta{
+  font-size: 1rem;
+  font-weight: bolder;
+}
+.bi-wallet2{
+  font-size: 1rem;
+}
+#staff td,
+#staff th{
+  text-align: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #111;
+}
+#staff th{
+  height: 2rem;
+}
+#staff .total{
+  border: none;
+  padding-top: 2rem;
+  font-weight: bold;
+}
+
+
+/*ANIMAÇÕES*/
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+  40%{
+    transform: rotate(3deg);
+  }
+  80%{
+    transform: rotate(-3deg);
+  }
+  100%{
+    transform: rotate(0deg)
+  }
+}
+
+@keyframes ground{
+  0%{
+    background-position: 0% 0%;  
+  }
+  20%{
+    background-position: 50% 0%; 
+  }
+  40%{
+    background-position: 100% 0%;
+  }
+  60%{
+    background-position: 150% 0%;
+  }
+  80%{
+    background-position: 200% 0%;
+  }
+  100%{
+    background-position: 250% 0%;
+  }   
+  }
+
+ /*RESPONSIVIDADE IPAD DEITADO*/
+ @media (max-width: 1024px){
+  .container-cardapio{
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    margin-bottom: 0rem;
+  }
+}  
+
+  /*RESPONSIVIDADE IPAD EM PÉ*/
+@media (max-width: 768px){
+  main img{
+    height: 40%;
+  }
+  .container-cardapio{
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+  }
+  body{
+    background-size: 2000% 100%;
+  }
+}
+
+/*RESPONSIVIDADE CELULAR*/
+@media(max-width: 430px){
+  main img{
+    width: 90%;
+    height: auto;
+  }
+  .container-cardapio{
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+  #equipe .card-group{
+    grid-template-columns: 1fr;
+    padding: 2rem 0;
+  }
+  #equipe .card{
+    padding-bottom: 2rem;
+  }
+  #contato,
+  #login{
+    width: 20rem;
+  }
+  .form-group{
+    width: 16rem;
+  }
+  .comanda,
+  .editestoque{
+    width: 90%;
+  }
+  #staff .unit-comanda{
+    width: 8rem;
+  }
+  #staff .card{
+    margin: 0 auto;
+  }
+  .item-list{
+    width: 20rem;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  #conta{
+    width: 23rem;
+    padding: 0.5rem;
+  }
+  .total{
+    width: 22rem;
+  }
+  #staff td,
+  #staff th{
+  padding: 0.1rem;
+  }    
+  #staff tr{
+    
+  margin: 0 auto;
+  }
+  #staff .displaynone{
+    display: none;
+  }
+  .nav-items{
+    display: none;
+  }
+  .sandbar{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    height: 5rem;
+    z-index: 4;
+    cursor: pointer;
+    display: block;
+  }
+  .menu.active{
+    display: block;
+  }
+  .menu{
+    display: none;
+    position: absolute;
+    top: 7rem;
+    z-index: 3;
+    width: 100%;
+    padding: 0 1rem 1rem 1rem;
+    background-color: rgba(253, 253, 253, 0.5);
+  }
+  .colunm{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .menu a{
+    padding: 0.3rem;
+    text-align: center;
+    animation: enterright 1s;
+  }  
+}
+
+

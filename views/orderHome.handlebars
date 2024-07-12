@@ -1,0 +1,98 @@
+<div class="container-fluid">
+   <div class="menu">
+    <div class="colunm">
+      <a href="/showestoque">E s t o q u e</a>  
+    <a href="/logout">S a i r</a>   
+    </div>
+  </div>
+  <img class="sandbar" src="/img/menu.png"/>
+<nav>
+  <div class="navbar">
+    <a id="none" href="/"><img class="navbar-brand" src="/img/logo balão branco.png"></a>
+    <div class="nav-items">
+    <a href="/showestoque">E s t o q u e</a>  
+    <a href="/logout">S a i r</a>    
+    </div>    
+  </div>
+</nav>
+<main id="staff">
+  <div class="mb-4 comanda">
+      <h4 class="mb-4">Comandas abertas: </h4>     
+    <div class="text-center gap-3">
+      {{#each clientes}}
+      <a class="unit-comanda"
+        type="submit"
+        href="/searchcomanda/{{this.comanda}}"
+      />{{this.comanda}}. {{this.nome}} {{this.apto}}</a>
+      {{/each}}
+    </div>
+    </div>  
+  <form action="/insertComanda" method="POST" class="comanda row g-3">
+  {{#if pedido}}
+     <div class="alert-comanda">
+      Pedido realizado com sucesso!
+    </div> 
+     <script>
+        setTimeout(function() { 
+              window.location.href = '/staff'
+        }, 2000)      
+      </script>
+  {{/if}}          
+  {{#if cadastrado}}
+    <div class="alert-comanda">
+      Comanda cadastrada com sucesso!
+    </div>
+    <script>
+        setTimeout(function() { 
+              window.location.href = '/staff'
+        }, 1000)      
+      </script>
+  {{/if}}    
+  {{#if erro}}
+    <div class="erro">
+      Comanda já cadastrada, utilize outro número!
+    </div>
+    <script>
+        setTimeout(function() { 
+              window.location.href = '/staff'
+        }, 1000)      
+      </script>
+  {{/if}}
+    <h4>Cadastre uma nova comanda aqui:</h4>
+    <div class="col-md-2">
+      <label for="comanda" class="form-label">Nº: </label>
+      <input type="text" class="form-control" name="comanda" required/>
+    </div>
+    <div class="col-md-5">
+      <label for="nome" class="form-label">Nome: </label>
+      <input type="text" class="form-control" name="nome" required/>
+    </div>
+    <div class="col-md-3">
+      <label for="telefone" class="form-label">Telefone: </label>
+      <input type="text" class="form-control" name="telefone" required/>
+    </div>
+    <div class="col-md-2">
+      <label for="apto" class="form-label">Apto: </label>
+      <input type="text" class="form-control" name="apto" required />
+    </div>
+    <div class="col-md-12">
+      <label for="obs" class="form-label">Observação: </label>
+      <input type="text" class="form-control" name="obs"/>
+    </div>
+    <div class="text-center">
+      <input type="submit" class="btn btn-light" value="Cadastrar" />
+    </div>
+  </form>  
+    </main>
+</div>
+
+
+
+
+
+
+
+
+
+
+  

@@ -1,0 +1,58 @@
+<div class="container-fluid">
+   <div class="menu">
+    <div class="colunm">
+      <a href="/searchcomanda/{{comanda}}">V o l t a r</a>
+        <a href="/staff">C o m a n d a s</a>
+        <a href="/showestoque">E s t o q u e</a>
+        <a href="/logout">S a i r</a>
+    </div>
+  </div>
+  <img class="sandbar" src="/img/menu.png"/>
+  <nav>
+    <div class="navbar">
+      <a id="none" href="/"><img class="navbar-brand" src="/img/logo balão branco.png" /></a>
+      <div class="nav-items">
+        <a href="/searchcomanda/{{comanda}}">V o l t a r</a>
+        <a href="/staff">C o m a n d a s</a>
+        <a href="/showestoque">E s t o q u e</a>
+        <a href="/logout">S a i r</a>
+      </div>
+    </div>
+  </nav>
+  <main id="staff">
+    <h5>Detalhes da Comanda {{comanda}}</h5>
+    <form class="item-list mt-4" id="conta">
+      <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Qtde</th>
+        <th>Valor Unit</th>
+        <th class="displaynone">Obs</th>
+        <th>Data e Hora</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each pedidos}}
+        <tr>
+          <td>{{item}}</td>
+          <td>{{qtde}}</td>
+          <td>{{valorunit}}</td>
+          <td class="displaynone">{{obs}}</td>
+          <td>{{formatDate data}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+    <tfoot>
+      <tr>
+        <td class="total" colspan="5">Total: R$ {{total}}</td>
+      </tr>
+    </tfoot>
+  </table>
+    </form>
+     <div class="text-center mt-4">
+        <a href="/pdf/{{comanda}}" class="btn btn-light">Gerar pdf</a>
+      </div>
+    <a href="/zerarcomanda/{{comanda}}" class="btn btn-light mt-4" type="submit">Zerar Conta</a>
+  </main>
+</div>

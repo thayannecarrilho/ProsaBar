@@ -1,0 +1,157 @@
+<div class="container-fluid">
+   <div class="menu">
+    <div class="colunm">
+      <a href="/staff">C o m a n d a s</a>  
+    <a href="/addestoque">A d i c i o n a r</a>  
+    <a href="/logout">S a i r</a> 
+    </div>
+  </div>
+  <img class="sandbar" src="/img/menu.png"/>
+<nav>
+  <div class="navbar">
+    <a id="none" href="/"><img class="navbar-brand" src="/img/logo balão branco.png"></a>
+    <div class="nav-items">
+    <a href="/staff">C o m a n d a s</a>  
+    <a href="/addestoque">A d i c i o n a r</a>  
+    <a href="/logout">S a i r</a>    
+    </div>    
+  </div>
+</nav>
+<main id="staff">
+<div class="editestoque">
+    <h4>Estoque de Bebidas:</h4>
+    {{#each estoquebebida}}
+      <form action="/editestoquebebida" class="row g-3 mt-4" method="POST">
+        <div class="col-md-4">
+          <input
+            type="text"
+            class="form-control"
+            name="item"
+            value="{{this.item}}"
+          />
+        </div>
+        <div class="col-md-2">
+          <input
+            type="text"
+            class="form-control"
+            name="qtde"
+            value="{{this.qtde}}"
+          />
+        </div>
+        <div class="col-md-2">
+          <input
+            type="text"
+            class="form-control"
+            name="valorunit"
+            value="{{this.valorunit}}"
+          />
+        </div>
+        <div class="col-md-2 d-grid">
+          <input type="submit" class="btn btn-light" value="Editar" />
+        </div>
+        <div class="col-md-2">
+      </form>
+      <form class="d-grid" method="POST" action="/dropestoquebebida/{{this.item}}">
+        <input type="submit" class="btn btn-light" value="Apagar" />
+      </form>
+        </div>      
+    {{/each}}
+  </div>
+  <div class="editestoque mt-4">
+  <h4>Estoque Diversos:</h4>
+  {{#each estoquediverso}}
+    <form class="row g-3 mt-4" method="POST" action="/editestoquediverso">
+      <div class="col-md-4">
+        <input
+          type="text"
+          class="form-control"
+          name="item"
+          value="{{this.item}}"
+        />
+      </div>
+      <div class="col-md-2">
+        <input
+          type="text"
+          class="form-control"
+          name="qtde"
+          value="{{this.qtde}}"
+        />
+      </div>
+      <div class="col-md-2">
+        <input
+          type="text"
+          class="form-control"
+          name="valorunit"
+          value="{{this.valorunit}}"
+        />
+      </div>
+      <div class="col-md-2 d-grid">
+        <input type="submit" class="btn btn-light" value="Editar" />
+      </div>
+  <div class="col-md-2">
+      </form>
+      <form class="d-grid" method="POST" action="/dropestoquediverso/{{this.item}}">
+        <input type="submit" class="btn btn-light" value="Apagar" />
+      </form>
+        </div>      
+    {{/each}}
+  </div>
+  <div class="editestoque mt-4">
+  <h4>Estoque da Cozinha:</h4>
+  {{#each estoquecozinha}}
+    <form class="row g-3 mt-4" method="POST" action="/editestoquecozinha">
+      <div class="col-md-4">
+        <input
+          type="text"
+          class="form-control"
+          name="item"
+          value="{{this.item}}"
+        />
+      </div>
+      <div class="col-md-2">
+        <input
+          type="text"
+          class="form-control"
+          name="qtde"
+          value="{{this.qtde}}"
+        />
+      </div>
+      <div class="col-md-2">
+        <input
+          type="text"
+          class="form-control"
+          name="valorunit"
+          value="{{this.valorunit}}"
+        />
+      </div>
+      <div class="col-md-2 d-grid">
+        <input type="submit" class="btn btn-light" value="Editar" />
+      </div>
+      <div class="col-md-2">
+      </form>
+      <form class="d-grid" method="POST" action="/dropestoquecozinha/{{this.item}}">
+        <input type="submit" class="btn btn-light" value="Apagar" />
+      </form>
+        </div>      
+    {{/each}}
+  </div>
+  </main>
+</div>
+
+
+
+
+
+</div>
+<footer>
+  &copy; Prosa Bar | 2024
+</footer>
+
+
+
+
+
+
+
+
+  

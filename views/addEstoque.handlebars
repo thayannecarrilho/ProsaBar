@@ -1,0 +1,97 @@
+<div class="container-fluid" id="estoque">
+  <div class="menu">
+    <div class="colunm">
+      <a href="/staff">C o m a n d a s</a>  
+    <a href="/showestoque">E s t o q u e</a>  
+    <a href="/logout">S a i r</a>
+    </div>
+  </div>
+  <img class="sandbar" src="/img/menu.png"/>
+<nav>
+  <div class="navbar">
+    <a id="none" href="/"><img class="navbar-brand" src="/img/logo balão branco.png"></a>
+    <div class="nav-items">
+    <a href="/staff">C o m a n d a s</a>  
+    <a href="/showestoque">E s t o q u e</a>  
+    <a href="/logout">S a i r</a>    
+    </div>    
+  </div>
+</nav>
+<main id="staff">
+    {{#if cadastrado}}
+     <div class="alert-comanda mb-4">
+      Item cadastrado com sucesso!
+    </div> 
+     <script>
+        setTimeout(function() { 
+              window.location.href = '/addestoque'
+        }, 1000)      
+      </script>
+  {{/if}}          
+  {{#if erro}}
+    <div class="erro mb-4">
+      Atenção!!! Item já cadastrado!
+    </div>
+    <script>
+        setTimeout(function() { 
+              window.location.href = '/addestoque'
+        }, 1000)      
+      </script>
+  {{/if}}  
+  </form>    
+  <form action="/insertestoquebebida" method="POST" class="comanda row g-3">
+    <div class="col-md-6">
+      <label for="item" class="form-label">Bebida: </label>
+      <input type="text" class="form-control" name="item" required />
+    </div>
+    <div class="col-md-3">
+      <label for="qtde" class="form-label">Qtde: </label>
+      <input type="text" class="form-control" name="qtde" required />
+    </div>
+    <div class="col-md-3">
+      <label for="valorunit" class="form-label">Valor R$: </label>
+      <input type="text" class="form-control" name="valorunit" required />
+    </div>
+    <div class="text-center">
+      <input type="submit" class="btn btn-light" value="Incluir item" />
+    </div>
+  </form>
+  <form action="/insertestoquediverso" method="POST" class="comanda row g-3 mt-4">
+    <div class="col-md-6">
+      <label for="item" class="form-label">Diverso: </label>
+      <input type="text" class="form-control" name="item" required />
+    </div>
+    <div class="col-md-3">
+      <label for="qtde" class="form-label">Qtde: </label>
+      <input type="text" class="form-control" name="qtde" required />
+    </div>
+    <div class="col-md-3">
+      <label for="valorunit" class="form-label">Valor R$: </label>
+      <input type="text" class="form-control" name="valorunit" required />
+    </div>
+    <div class="text-center">
+      <input type="submit" class="btn btn-light" value="Incluir item" />
+    </div>
+  </form>
+  <form action="/insertestoquecozinha" method="POST" class="comanda row g-3 mt-4">
+    <div class="col-md-6">
+      <label for="item" class="form-label">Cozinha: </label>
+      <input type="text" class="form-control" name="item" required />
+    </div>
+    <div class="col-md-3">
+      <label for="qtde" class="form-label">Qtde: </label>
+      <input type="text" class="form-control" name="qtde" required />
+    </div>
+    <div class="col-md-3">
+      <label for="valorunit" class="form-label">Valor R$: </label>
+      <input type="text" class="form-control" name="valorunit" required />
+    </div>
+    <div class="text-center">
+      <input type="submit" class="btn btn-light" value="Incluir item" />
+    </div>
+  </form>
+  </main>
+</div>
+
+
+

@@ -1,0 +1,129 @@
+<!-- HTML com ajustes no frontend -->
+<div class="container-fluid">
+  <div class="menu">
+    <div class="colunm">
+       <a href="/staff">C o m a n d a s</a>  
+        <a href="/showestoque">E s t o q u e</a>  
+        <a href="/logout">S a i r</a>    
+    </div>
+  </div>
+  <img class="sandbar" src="/img/menu.png"/>
+  <nav>
+    <div class="navbar">
+      <a id="none" href="/"><img class="navbar-brand" src="/img/logo balão branco.png"></a>
+      <div class="nav-items">
+        <a href="/staff">C o m a n d a s</a>  
+        <a href="/showestoque">E s t o q u e</a>  
+        <a href="/logout">S a i r</a>    
+      </div>    
+    </div>
+  </nav>
+  <main id="staff">
+    <h5>Comanda nº {{clientes.comanda}} {{clientes.nome}} | Apto: {{clientes.apto}}</h5>
+    <a href="/fecharcomanda/{{clientes.comanda}}" type="submit" class="btn btn-light conta"><i class="bi bi-wallet2"></i> Fechar conta</a>
+    <form class="row g-3 align-center mt-4 gap-3">    
+      <div class="col-md-3 card">
+        <label for="bebida" class="form-label text-center">Bebidas: </label>
+        <select class="form-select" name="itemName" id="selectedbebida">
+          {{#each estoquebebida}}  
+            <option value="{{this.item}}" data-valorunit="{{this.valorunit}}">{{this.item}} R$ {{this.valorunit}}</option>
+          {{/each}}
+        </select>
+        <div class="qtde mt-4">
+          <label for="qtdebebida" class="form-label">Qtde: </label>
+          <input class="form-control pedido" type="text" name="qtde_bebida" />
+        </div>
+        <div class="qtde mt-4">
+          <button id="none" onclick="addSelected('bebida')" type="button"><i class="bi bi-plus-circle-fill"></i></button>
+        </div>
+      </div>
+      <div class="col-md-3 card">
+        <label for="diverso" class="form-label text-center">Diversos: </label>
+        <select class="form-select" name="itemName" id="selecteddiverso">
+          {{#each estoquediverso}}  
+            <option value="{{this.item}}" data-valorunit="{{this.valorunit}}">{{this.item}} R$ {{this.valorunit}}</option>
+          {{/each}}
+        </select>
+        <div class="qtde mt-4">
+          <label for="qtddiverso" class="form-label">Qtde: </label>
+          <input class="form-control pedido" type="text" name="qtde_diverso" />
+        </div>
+        <div class="qtde mt-4">
+          <button id="none" onclick="addSelected('diverso')" type="button"><i class="bi bi-plus-circle-fill"></i></button>
+        </div>
+      </div>
+      <div class="col-md-3 card">
+        <label for="cozinha" class="form-label text-center">Cozinha: </label>
+        <select class="form-select" name="itemName" id="selectedcozinha">
+          {{#each estoquecozinha}}  
+            <option value="{{this.item}}" data-valorunit="{{this.valorunit}}">{{this.item}} R$ {{this.valorunit}}</option>
+          {{/each}}
+        </select>
+        <div class="qtde mt-4">
+          <label for="qtdcozinha" class="form-label">Qtde: </label>
+          <input class="form-control pedido" type="text" name="qtde_cozinha" />
+        </div>
+        <div class="qtde mt-4">
+          <button id="none" onclick="addSelected('cozinha')" type="button"><i class="bi bi-plus-circle-fill"></i></button>
+        </div>
+      </div>
+    </form>
+    <form action="/saveSelectedItems" method="POST" class="row g-3 mt-4 align-center">
+  <div class="item-list mt-4" id="item-list">
+    <input type="hidden" name="comanda" value="{{clientes.comanda}}">
+    <p>Itens selecionados:</p>
+    <ul id="selectedItemsDisplay"></ul>
+    <input type="hidden" name="selectedItems" id="selectedItemsInput">
+    <input class="form-control" type="text" name="obs" placeholder="Observação">
+  </div>
+  <div class="text-center">
+    <button class="btn btn-light" type="submit">Enviar pedido</button>
+  </div>
+</form>
+
+<script>
+function addSelected(stockType) {
+  var selectElement = document.getElementById('selected' + stockType);
+  var quantityElement = document.querySelector('[name="qtde_' + stockType + '"]');
+  var selectedItem = selectElement.value;
+  var selectedQuantity = quantityElement.value;
+
+  var selectedOption = selectElement.options[selectElement.selectedIndex];
+  var selectedUnitValue = selectedOption.dataset.valorunit;
+
+  if (selectedItem && selectedQuantity && selectedUnitValue) {
+    var newItem = {
+      item: selectedItem,
+      qtde: selectedQuantity,
+      valorunit: selectedUnitValue
+    };
+
+    var itemList = document.getElementById('selectedItemsDisplay');
+    var newListItem = document.createElement('li');
+    newListItem.textContent = `${newItem.item} - Qtde: ${newItem.qtde} - Valor: R$ ${newItem.valorunit}`;
+    itemList.appendChild(newListItem);
+
+    var selectedItemsInput = document.getElementById('selectedItemsInput');
+    var itemsArray = JSON.parse(selectedItemsInput.value || '[]');
+    itemsArray.push(newItem);
+    selectedItemsInput.value = JSON.stringify(itemsArray);
+
+    selectElement.value = '';
+    quantityElement.value = '';
+  } else {
+    alert('Por favor, selecione um item e uma quantidade.');
+  }
+}
+
+// Função para remover item da lista visual e atualizar campo oculto
+function removeItem(index) {
+  var itemList = document.getElementById('selectedItemsDisplay');
+  itemList.removeChild(itemList.childNodes[index]);
+  
+  var selectedItemsInput = document.getElementById('selectedItemsInput');
+  var itemsArray = JSON.parse(selectedItemsInput.value);
+  itemsArray.splice(index, 1);
+  selectedItemsInput.value = JSON.stringify(itemsArray);
+}
+</script>
+
